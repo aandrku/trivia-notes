@@ -18,9 +18,9 @@ A real time multiplayer quiz game to play with your friends.
 ### Hosting and Deployment
 - Frontend hosting options:
     - Netlify - very simple, can be done in a couple minutes
-    - Include with backend, cab be embedded inside Go binary.
+    - Include with backend, can be embedded inside Go binary.
     Not very flexible. If backend server goes down, so does frontend.
-    - Vercel - I am not familier with this at all. Needs research
+    - Vercel - I am not familiar with this at all. **Needs research**
 
 - Backend hosting options:
     - AWS - I am not very familiar with this, can be expensive, unless free
@@ -28,13 +28,13 @@ A real time multiplayer quiz game to play with your friends.
     that I dont have much of it left.
     - Linode - This is what I use for my personal website right now. You can get a cheap
     linux server for approximately 5$/month.
-    - **Extra** - I've recently came across Caddy and would love to check it out as a reverse 
-    proxy to handle our TLS certificates.
+    - **Extra** - I've recently came across Caddy and would love to check it out
+    as a reverse-proxy to handle our TLS certificates.
 
 
 ## Authentication
 - MVP:
-    - Simple email + password authentication (store password hashes + salt)
+    - Simple email + password authentication (store password hashes + salting)
 - Post-MVP
     - Oauth2 + email verification (needs research)
     - Possible 2-factor for email auth, would be fun to learn.
