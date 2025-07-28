@@ -16,14 +16,13 @@ A real time multiplayer quiz game to play with your friends.
 - Next.js + TypeScript
 
 ### Hosting and Deployment
-**TO BE DECIDED**
-Frontend hosting options:
+- Frontend hosting options:
     - Netlify - very simple, can be done in a couple minutes
     - Include with backend, cab be embedded inside Go binary.
     Not very flexible. If backend server goes down, so does frontend.
     - Vercel - I am not familier with this at all. Needs research
 
-Backend hosting options:
+- Backend hosting options:
     - AWS - I am not very familiar with this, can be expensive, unless free
     tier. I used to host my personal website on AWS EC2 instance and I believe
     that I dont have much of it left.
