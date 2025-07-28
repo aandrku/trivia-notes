@@ -19,10 +19,27 @@ One of the goals of working together on this project is to learn professional co
 - HTTP Server 
     - Most likely: Go's stdlib http package or Echo
     - Worth considering: Gin, Fiber
-- DB: Postgres
 
 ### Frontend
 - Next.js + TypeScript
+
+### Database 
+SQL (Postgres)
+
+Basic schemas (to brainstorm and define relationship during calls): 
+- UserModel: 
+    - id, username, email, hashPassword
+- QuizModel:
+    - id, quizTitle, duration? (number of question to generate?)
+- QuestionModel: 
+    - id, questionTitle, quizId (foreign key), rightAnswerId (foreign key)
+- AnswerModel: 
+    - id, questionId (foreign key), answerText
+- UserQuizModel: // junction table to have history of quizzes played by user for future purposes (maybe we will have a /profile page where user can check his history)
+    - id, userId (foreign key), quizId (foreign key)
+
+### Schemas
+
 
 ### Hosting and Deployment
 - Frontend hosting options:
