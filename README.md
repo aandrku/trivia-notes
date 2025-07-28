@@ -38,9 +38,6 @@ Basic schemas (to brainstorm and define relationship during calls):
 - UserQuizModel: // junction table to have history of quizzes played by user for future purposes (maybe we will have a /profile page where user can check his history)
     - id, userId (foreign key), quizId (foreign key)
 
-### Schemas
-
-
 ### Hosting and Deployment
 - Frontend hosting options:
     - Netlify - very simple, can be done in a couple minutes
