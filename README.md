@@ -1,6 +1,15 @@
 #  Project Descripition
 A real time multiplayer quiz game to play with your friends.
 
+## Collaboration 
+One of the goals of working together on this project is to learn professional collaboration like you would in a developer role. To maximize this I would like to implement the following: 
+
+- Shared "Kanban style" board to divide tasks and decide what task we will be working on a specific coding session to keep it consistent. I never used tools like that so we can try something like Trello or Github Projects.  
+
+- Any coding session will follow the "driver-navigator" approach that involves two developers working together on the same task, with one person (the driver) focusing on the hands-on coding and the other (the navigator) providing guidance and feedback. The navigator observes, reviews code, and thinks about the overall strategy and potential issues, while the driver concentrates on the immediate implementation details. Each dev will improve in both designing and writing software.  
+
+- I would like to reach an MVP first by coding on this project only during our calls and then experiment coding on our own by sending PR requests, feature branches and code reviews.
+
 # Technical details
 
 ## Stack
@@ -10,10 +19,24 @@ A real time multiplayer quiz game to play with your friends.
 - HTTP Server 
     - Most likely: Go's stdlib http package or Echo
     - Worth considering: Gin, Fiber
-- DB: Postgres
 
 ### Frontend
 - Next.js + TypeScript
+
+### Database 
+SQL (Postgres)
+
+Basic schemas (to brainstorm and define relationship during calls): 
+- UserModel: 
+    - id, username, email, hashPassword
+- QuizModel:
+    - id, quizTitle, duration? (number of question to generate?)
+- QuestionModel: 
+    - id, questionTitle, quizId (foreign key), rightAnswerId (foreign key)
+- AnswerModel: 
+    - id, questionId (foreign key), answerText
+- UserQuizModel: // junction table to have history of quizzes played by user for future purposes (maybe we will have a /profile page where user can check his history)
+    - id, userId (foreign key), quizId (foreign key)
 
 ### Hosting and Deployment
 - Frontend hosting options:
@@ -56,21 +79,33 @@ Alternative option: assign an id to each game, then players should be able to us
 generated code to join the game.
 
 - Players compete with each other (no teams)
-- Players should be able to pick a category for the game.
+- Players should be able to pick a category for the game. --> I think this should be post-mvp. 
+
+MVP should be: 
+- player1 creates room, invite player2 
+- player2 joins 
+- game start, 
+- 10 random questions gets pulled from db, shown to both players one after another
+- players start guessing
+- scores get updated live, shown to each player
+- game ends, score gets compared, winner is decided
+
 - Players earn points by answering questions.
 - Each question is worth an arbitrary amount of points.
 - The quicker you answer the question, more points you get.
 - Wrong answer means no points.
 - Players should be able to see a ranking, which will show 
-how many points each player has earned so far.
+how many points each player has earned so far. --> Good idea, maybe a live bar on each player view to show how the other player is doing to put "pressure"
 - Whoever scores the biggest amount of points wins.
 
 ## Post-MVP
 - We'll se later
 
-# Desing??
+# Design??
 
 Honestly, idk. I would love to use some kind of pixelated font like in old games,
 dark colors with one accent color, square corners, and thick borders.
+
+Figma might be an overkill but might be worth learning it together to sketch the UI would look like. 
 
 
